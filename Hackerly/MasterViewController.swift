@@ -7,53 +7,67 @@
 //
 
 import UIKit
+import libHN
+import SDWebImage
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
-
+    
+    var topPosts = [HNPost]()
+    
+    var menuTransitionManager = MenuTransitionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        
+        self.tableView.estimatedRowHeight = 126
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        loadPosts()
+        
+        self.title = "Home"
+    }
+    
+    func loadPosts() {
+        HNManager.sharedManager().loadPostsWithFilter(.Top) { (posts, urlAddition) -> Void in
+            if let top = posts as! [HNPost]? {
+                self.topPosts = top
+                self.tableView.reloadData()
+            }else {
+                print("Error loading posts")
+                self.loadPosts()
+            }
         }
     }
-
-    override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
-        super.viewWillAppear(animated)
+    
+    func loadMorePosts() {
+        
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
+//        if segue.identifier == "showDetail" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                let object = objects[indexPath.row] as! NSDate
+//                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+//                controller.detailItem = object
+//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+//                controller.navigationItem.leftItemsSupplementBackButton = true
+//            }
+//        }
+        if segue.identifier == "showMenu" {
+            let menuTableViewController = segue.destinationViewController as! MenuTableViewController
+            menuTableViewController.currentItem = self.title!
+//            menuTableViewController.transitioningDelegate = self.menuTransitionManager
         }
     }
 
@@ -64,31 +78,62 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return topPosts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell", forIndexPath: indexPath) as! PostTableViewCell
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let post = topPosts[indexPath.row]
+        cell.title.text = post.Title
+        cell.domain.text = post.UrlDomain
+        if (post.Username != "") {
+             cell.author.text = post.Username
+            if cell.authorImage.hidden {
+                cell.authorImage.hidden = false
+                cell.author.hidden = false
+            }
+        } else {
+            cell.authorImage.hidden = true
+            cell.author.hidden = true
+        }
+        
+        if (post.TimeCreatedString != "") {
+            cell.time.text = post.TimeCreatedString
+            if cell.timeImage.hidden {
+                cell.timeImage.hidden = false
+                cell.time.hidden = false
+            }
+        } else {
+            cell.timeImage.hidden = true
+            cell.time.hidden = true
+        }
+        cell.score.text = String(post.Points)
+        cell.rowId = indexPath.row
+        
+        cell.scoreCard.tag = indexPath.row
+        cell.scoreCard.addTarget(self, action: "upvote:", forControlEvents: .TouchUpInside)
+        
+        if post.UrlDomain != nil && post.UrlDomain != "" {
+            cell.favicon.superview?.hidden = false
+            let faviconURL = NSURL(string: "http://www.google.com/s2/favicons?domain=" + post.UrlDomain)
+            cell.favicon.sd_setImageWithURL(faviconURL, placeholderImage: UIImage(named: "domain"))
+        } else {
+            cell.favicon.superview?.hidden = true
+        }
+        
         return cell
     }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func upvote(sender: ScoreCard) {
+        sender.isFavorite = !sender.isFavorite
+        self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0))
     }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
+    
+    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+        let sourceController = segue.sourceViewController as! MenuTableViewController
+        self.title = sourceController.currentItem
     }
-
 
 }
 

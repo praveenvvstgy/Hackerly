@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522DC15DD95C5AB29A3BA52C /* Pods_Hackerly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D918E114DB2273F8FCAEB81 /* Pods_Hackerly.framework */; };
 		B402E7281C33B15700069CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B402E7271C33B15700069CE8 /* AppDelegate.swift */; };
 		B402E72A1C33B15700069CE8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B402E7291C33B15700069CE8 /* MasterViewController.swift */; };
 		B402E72C1C33B15700069CE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B402E72B1C33B15700069CE8 /* DetailViewController.swift */; };
-		B402E72F1C33B15700069CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B402E72D1C33B15700069CE8 /* Main.storyboard */; };
+		B402E72F1C33B15700069CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B402E72D1C33B15700069CE8 /* Main.storyboard */; settings = {ASSET_TAGS = (MasterViewController, ); }; };
 		B402E7311C33B15700069CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B402E7301C33B15700069CE8 /* Assets.xcassets */; };
 		B402E7341C33B15700069CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B402E7321C33B15700069CE8 /* LaunchScreen.storyboard */; };
+		B407EB171C34FC800018725F /* hn.json in Resources */ = {isa = PBXBuildFile; fileRef = B407EB161C34FC800018725F /* hn.json */; };
+		B407EB1B1C34FD140018725F /* ScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B407EB1A1C34FD140018725F /* ScoreCard.swift */; };
+		B407EB1D1C3503090018725F /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B407EB1C1C3503090018725F /* Paths.swift */; };
+		B407EB1F1C3504450018725F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B407EB1E1C3504450018725F /* Extensions.swift */; };
+		B4621DE71C35C44900973224 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4621DE61C35C44900973224 /* MenuTableViewController.swift */; };
+		B4621DE91C35C78200973224 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4621DE81C35C78200973224 /* MenuTableViewCell.swift */; };
+		B4621DEB1C364E0B00973224 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4621DEA1C364E0B00973224 /* MenuTransitionManager.swift */; };
+		B4FC61B71C344462007505E1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC61B61C344462007505E1 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D918E114DB2273F8FCAEB81 /* Pods_Hackerly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hackerly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FC78D12C4884F008725D919 /* Pods-Hackerly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackerly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hackerly/Pods-Hackerly.debug.xcconfig"; sourceTree = "<group>"; };
+		B296049E88C71AE25C503CA7 /* Pods-Hackerly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hackerly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hackerly/Pods-Hackerly.release.xcconfig"; sourceTree = "<group>"; };
 		B402E7241C33B15700069CE8 /* Hackerly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackerly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B402E7271C33B15700069CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B402E7291C33B15700069CE8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +36,15 @@
 		B402E7301C33B15700069CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B402E7331C33B15700069CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B402E7351C33B15700069CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B407EB161C34FC800018725F /* hn.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hn.json; path = Pods/libHN/Source/hn.json; sourceTree = "<group>"; };
+		B407EB1A1C34FD140018725F /* ScoreCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreCard.swift; sourceTree = "<group>"; };
+		B407EB1C1C3503090018725F /* Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
+		B407EB1E1C3504450018725F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B407EB201C350C230018725F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		B4621DE61C35C44900973224 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		B4621DE81C35C78200973224 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		B4621DEA1C364E0B00973224 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
+		B4FC61B61C344462007505E1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +52,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522DC15DD95C5AB29A3BA52C /* Pods_Hackerly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91FB7568CD37F6E32CD8EC75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D918E114DB2273F8FCAEB81 /* Pods_Hackerly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B402E71B1C33B15600069CE8 = {
 			isa = PBXGroup;
 			children = (
+				B407EB161C34FC800018725F /* hn.json */,
 				B402E7261C33B15700069CE8 /* Hackerly */,
 				B402E7251C33B15700069CE8 /* Products */,
+				E77D74B9C0BB01216B16ECDD /* Pods */,
+				91FB7568CD37F6E32CD8EC75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +89,32 @@
 		B402E7261C33B15700069CE8 /* Hackerly */ = {
 			isa = PBXGroup;
 			children = (
+				B407EB1A1C34FD140018725F /* ScoreCard.swift */,
+				B407EB1C1C3503090018725F /* Paths.swift */,
+				B407EB1E1C3504450018725F /* Extensions.swift */,
 				B402E7271C33B15700069CE8 /* AppDelegate.swift */,
 				B402E7291C33B15700069CE8 /* MasterViewController.swift */,
+				B4621DEA1C364E0B00973224 /* MenuTransitionManager.swift */,
 				B402E72B1C33B15700069CE8 /* DetailViewController.swift */,
 				B402E72D1C33B15700069CE8 /* Main.storyboard */,
+				B4621DE61C35C44900973224 /* MenuTableViewController.swift */,
+				B4621DE81C35C78200973224 /* MenuTableViewCell.swift */,
+				B407EB201C350C230018725F /* MyPlayground.playground */,
+				B4FC61B61C344462007505E1 /* PostTableViewCell.swift */,
 				B402E7301C33B15700069CE8 /* Assets.xcassets */,
 				B402E7321C33B15700069CE8 /* LaunchScreen.storyboard */,
 				B402E7351C33B15700069CE8 /* Info.plist */,
 			);
 			path = Hackerly;
+			sourceTree = "<group>";
+		};
+		E77D74B9C0BB01216B16ECDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FC78D12C4884F008725D919 /* Pods-Hackerly.debug.xcconfig */,
+				B296049E88C71AE25C503CA7 /* Pods-Hackerly.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +124,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B402E7381C33B15700069CE8 /* Build configuration list for PBXNativeTarget "Hackerly" */;
 			buildPhases = (
+				CA24FB8F9F725CE236FAF0BF /* Check Pods Manifest.lock */,
 				B402E7201C33B15700069CE8 /* Sources */,
 				B402E7211C33B15700069CE8 /* Frameworks */,
 				B402E7221C33B15700069CE8 /* Resources */,
+				575BE1CB032C38E517EC54B7 /* Embed Pods Frameworks */,
+				6D4B22C3B306C43E76903D7E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -93,6 +146,9 @@
 		B402E71C1C33B15600069CE8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					MasterViewController,
+				);
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Gowda I V, Praveen";
 				TargetAttributes = {
@@ -124,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B407EB171C34FC800018725F /* hn.json in Resources */,
 				B402E7341C33B15700069CE8 /* LaunchScreen.storyboard in Resources */,
 				B402E7311C33B15700069CE8 /* Assets.xcassets in Resources */,
 				B402E72F1C33B15700069CE8 /* Main.storyboard in Resources */,
@@ -132,14 +189,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		575BE1CB032C38E517EC54B7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hackerly/Pods-Hackerly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D4B22C3B306C43E76903D7E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hackerly/Pods-Hackerly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA24FB8F9F725CE236FAF0BF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B402E7201C33B15700069CE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B407EB1D1C3503090018725F /* Paths.swift in Sources */,
 				B402E72C1C33B15700069CE8 /* DetailViewController.swift in Sources */,
 				B402E72A1C33B15700069CE8 /* MasterViewController.swift in Sources */,
 				B402E7281C33B15700069CE8 /* AppDelegate.swift in Sources */,
+				B4621DE71C35C44900973224 /* MenuTableViewController.swift in Sources */,
+				B4621DE91C35C78200973224 /* MenuTableViewCell.swift in Sources */,
+				B4FC61B71C344462007505E1 /* PostTableViewCell.swift in Sources */,
+				B4621DEB1C364E0B00973224 /* MenuTransitionManager.swift in Sources */,
+				B407EB1B1C34FD140018725F /* ScoreCard.swift in Sources */,
+				B407EB1F1C3504450018725F /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +362,7 @@
 		};
 		B402E7391C33B15700069CE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC78D12C4884F008725D919 /* Pods-Hackerly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hackerly/Info.plist;
@@ -261,6 +374,7 @@
 		};
 		B402E73A1C33B15700069CE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B296049E88C71AE25C503CA7 /* Pods-Hackerly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hackerly/Info.plist;
@@ -289,6 +403,7 @@
 				B402E73A1C33B15700069CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -60,58 +60,6 @@
             </objects>
             <point key="canvasLocation" x="847" y="-594"/>
         </scene>
-        <!--Menu Table View Controller-->
-        <scene sceneID="iyf-z7-UNd">
-            <objects>
-                <tableViewController id="SaY-3p-cxN" customClass="MenuTableViewController" customModule="Hackerly" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zNc-AP-Drk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" red="0.88235294119999996" green="0.35686274509999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="50" id="RBR-E9-LwM" customClass="MenuTableViewCell" customModule="Hackerly" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RBR-E9-LwM" id="AV8-Wo-LNx">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-e6-wO7">
-                                            <rect key="frame" x="16" y="8" width="568" height="33.5"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" red="0.88235294119999996" green="0.35686274509999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="1rL-e6-wO7" firstAttribute="bottom" secondItem="AV8-Wo-LNx" secondAttribute="bottomMargin" id="2Pi-l8-pbl"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="1rL-e6-wO7" secondAttribute="trailing" constant="8" id="cRo-IX-t5H"/>
-                                        <constraint firstItem="1rL-e6-wO7" firstAttribute="leading" secondItem="AV8-Wo-LNx" secondAttribute="leadingMargin" constant="8" id="lwD-zn-z47"/>
-                                        <constraint firstItem="1rL-e6-wO7" firstAttribute="top" secondItem="AV8-Wo-LNx" secondAttribute="topMargin" id="zai-8Y-Tcy"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="titleLabel" destination="1rL-e6-wO7" id="JbY-eG-R0u"/>
-                                    <segue destination="BvD-h9-Jhd" kind="unwind" unwindAction="unwindToHome:" id="jCd-sM-Zbq"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="SaY-3p-cxN" id="KNm-P8-LF3"/>
-                            <outlet property="delegate" destination="SaY-3p-cxN" id="jd7-iW-B9q"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sQm-vT-4AW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="BvD-h9-Jhd" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="847" y="-2117"/>
-        </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
@@ -158,7 +106,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-Ly-gwh">
                                                     <rect key="frame" x="536" y="10" width="40" height="60"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5i-4g-Wt9" userLabel="Scorecard View" customClass="ScoreCard" customModule="Hackerly" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5i-4g-Wt9" userLabel="Scorecard View" customClass="DOFavoriteButton" customModule="DOFavoriteButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                             <animations/>
                                                             <constraints>
@@ -166,20 +114,21 @@
                                                                 <constraint firstAttribute="width" constant="40" id="mSb-uF-MjI"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                                    <real key="value" value="1"/>
+                                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="ic_arrow_drop_up"/>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
+                                                                    <color key="value" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="favoriteColor">
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="imageColorOff">
+                                                                    <color key="value" red="0.71764705882352942" green="0.71764705882352942" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
                                                                     <color key="value" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="notFavoriteColor">
-                                                                    <color key="value" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                                    <color key="value" red="0.88235294119999996" green="0.35686274509999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="starFavoriteColor">
-                                                                    <color key="value" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderNotFavoriteColor">
-                                                                    <color key="value" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                                    <real key="value" value="2"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
@@ -332,9 +281,6 @@
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="c4y-kG-ncw">
                             <color key="tintColor" red="0.88235294119999996" green="0.35686274509999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="SaY-3p-cxN" kind="presentation" identifier="showMenu" id="5Hp-gn-njn"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -345,6 +291,7 @@
     </scenes>
     <resources>
         <image name="author" width="75" height="75"/>
+        <image name="ic_arrow_drop_up" width="21" height="21"/>
         <image name="menu" width="22" height="22"/>
         <image name="time" width="72" height="72"/>
     </resources>

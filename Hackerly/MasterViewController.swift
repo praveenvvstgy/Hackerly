@@ -9,6 +9,7 @@
 import UIKit
 import libHN
 import SDWebImage
+import DOFavoriteButton
 
 class MasterViewController: UITableViewController {
 
@@ -16,8 +17,6 @@ class MasterViewController: UITableViewController {
     
     var topPosts = [HNPost]()
     
-    var menuTransitionManager = MenuTransitionManager()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -64,11 +63,6 @@ class MasterViewController: UITableViewController {
 //                controller.navigationItem.leftItemsSupplementBackButton = true
 //            }
 //        }
-        if segue.identifier == "showMenu" {
-            let menuTableViewController = segue.destinationViewController as! MenuTableViewController
-            menuTableViewController.currentItem = self.title!
-//            menuTableViewController.transitioningDelegate = self.menuTransitionManager
-        }
     }
 
     // MARK: - Table View
@@ -125,15 +119,15 @@ class MasterViewController: UITableViewController {
         return cell
     }
     
-    func upvote(sender: ScoreCard) {
-        sender.isFavorite = !sender.isFavorite
+    func upvote(sender: DOFavoriteButton) {
+        if sender.selected {
+            // deselect
+            sender.deselect()
+        } else {
+            // select with animation
+            sender.select()
+        }
         self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: sender.tag, inSection: 0))
     }
-    
-    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
-        let sourceController = segue.sourceViewController as! MenuTableViewController
-        self.title = sourceController.currentItem
-    }
-
 }
 

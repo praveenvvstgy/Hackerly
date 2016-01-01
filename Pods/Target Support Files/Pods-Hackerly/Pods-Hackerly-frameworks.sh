@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Hackerly/DOFavoriteButton.framework"
   install_framework "Pods-Hackerly/SDWebImage.framework"
   install_framework "Pods-Hackerly/libHN.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Hackerly/DOFavoriteButton.framework"
   install_framework "Pods-Hackerly/SDWebImage.framework"
   install_framework "Pods-Hackerly/libHN.framework"
 fi

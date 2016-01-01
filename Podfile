@@ -6,5 +6,6 @@ use_frameworks!
 target 'Hackerly' do
 pod 'libHN'
 pod 'SDWebImage', '~>3.7'
+pod 'DOFavoriteButton'
 end
 

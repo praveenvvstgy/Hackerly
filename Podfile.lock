@@ -1,14 +1,17 @@
 PODS:
+  - DOFavoriteButton (0.0.4)
   - libHN (4.1.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
 
 DEPENDENCIES:
+  - DOFavoriteButton
   - libHN
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
+  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   libHN: ec0205556a35d760b5b6a7804699f67276d6633a
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 

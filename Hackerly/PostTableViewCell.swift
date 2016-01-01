@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DOFavoriteButton
 
 class PostTableViewCell: UITableViewCell {
     
@@ -17,7 +18,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var timeImage: UIImageView!
-    @IBOutlet weak var scoreCard: ScoreCard!
+    @IBOutlet weak var scoreCard: DOFavoriteButton!
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var favicon: UIImageView!
     var rowId: Int!
